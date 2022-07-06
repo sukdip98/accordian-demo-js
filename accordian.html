@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       
+     }
+     body{
+        background-color: rgb(123, 123, 203);
+        color: white;
+     }
+     h1{
+        text-align: center;
+        margin: 5px 0px;
+
+     }
+     .accordian{
+        width: 90%;
+        max-width: 1000px;
+        margin: 5px auto;
+
+     }
+     .accordian-item{
+        background-color: #fff;
+        color: #111;
+        margin: 5px 0px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.0.5);
+     }
+     .accordian-item-header{
+        display: flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        padding: 10px;
+        font-weight: bold;
+     }
+     .accordian-item-header::after{
+        content: "\002B";
+        font-size: 25px;
+        position: absolute;
+        right: 8px;
+        transition: transform 0.2s ease-in-out;
+     }
+     .accordian-item-header.active::after{
+        content: "\2212";
+        /* transform: rotate(45deg); */
+     }
+     .accordian-item-body{
+        padding: 5px;
+        border-top: 3px solid;
+        border-image: linear-gradient(to right,transparent,yellow,transparent) 1;
+        display: none;
+     }
+     .accordian-item-header.active + .accordian-item-body{
+        display: block;
+     }
+     .nest-container{
+        padding: 5px 5px;
+     }
+     .nest-items{
+        background-color: aquamarine;
+        color: rgb(239, 231, 231);
+        border-radius: 5px;
+        margin: 5px 5px;
+        padding: 5px 5px;
+     }
+     .nest-header{
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+     }
+     .nest-header::after{
+        content: "\002B";
+        font-size: 25px;
+        position: absolute;
+       right: 8px;
+     }
+     .nest-header.active2::after{
+        content: "\2212";
+
+     }
+     .nest-item-body{
+        border-top: 3px solid;
+        border-image: linear-gradient(to right,transparent,yellow,transparent) 1;
+        display: none;
+        padding: 5px;
+
+     }
+     .nest-header.active2::after + .nest-item-body{
+        display: block;
+        
+     }
+    </style>
+</head>
+<body>
+    <h1>Accordian Tutorial</h1>
+    <div class="accordian">
+        <div class="accordian-item">
+           <div class="accordian-item-header">
+            What is web development?
+           </div>
+           <div class="accordian-item-body">
+            <div class="accordian-item-body-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta numquam in vitae. Distinctio illum suscipit non adipisci, sunt, ratione earum, qui laudantium exercitationem explicabo laborum iusto enim repellendus. Ullam, facere.
+
+            </div>
+           </div>
+        </div>
+        <div class="accordian-item">
+            <div class="accordian-item-header">
+             What is cors?
+            </div>
+            <div class="accordian-item-body">
+             <div class="accordian-item-body-content">
+                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta numquam in vitae. Distinctio illum suscipit non adipisci, sunt, ratione earum, qui laudantium exercitationem explicabo laborum iusto enim repellendus. Ullam, facere.
+                 
+             </div>
+            </div>
+         </div>
+         <div class="accordian-item">
+            <div class="accordian-item-header">
+             What is html?
+            </div>
+            <div class="accordian-item-body">
+             <div class="accordian-item-body-content">
+                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta numquam in vitae. Distinctio illum suscipit non adipisci, sunt, ratione earum, qui laudantium exercitationem explicabo laborum iusto enim repellendus. Ullam, facere.
+                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, animi labore pariatur nam repellendus nihil molestiae. Deleniti placeat ex hic vitae nostrum animi optio. Consequatur eveniet unde labore cumque quae.
+             </div>
+            </div>
+         </div>
+         <div class="accordian-item">
+            <div class="accordian-item-header">
+             This is a nested accordian
+            </div>
+            <div class="accordian-item-body">
+             <div class="accordian-item-body-content">
+                 <div class="nest-container">
+                    <div class="nest-items">
+                        <div class="nest-header">
+                         first nested element
+                        </div>
+                        <div class="nest-item-body">
+                           <div class="nest-item-body-content">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam fugit quibusdam molestiae saepe laudantium, amet id consectetur voluptatem ducimus illo rem cupiditate sit maiores recusandae necessitatibus iste dolorum ullam soluta!
+                           </div>
+                        </div>
+                    </div>
+                    <div class="nest-items">
+                        <div class="nest-header">
+                         second nested element
+                        </div>
+                        <div class="nest-item-body">
+                           <div class="nest-item-body-content">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam fugit quibusdam molestiae saepe laudantium, amet id consectetur voluptatem ducimus illo rem cupiditate sit maiores recusandae necessitatibus iste dolorum ullam soluta!
+                           </div>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+            </div>
+         </div>
+    </div>
+    <script src="accordian.js"></script>
+</body>
+</html>
